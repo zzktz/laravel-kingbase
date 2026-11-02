@@ -12,8 +12,27 @@
 
 ## 安装
 
+如果仓库已经发布到 Packagist，可以直接执行：
+
 ```bash
 composer require zzktz/laravel-kingbase
+```
+
+当前仓库以 GitHub 为远程仓库。尚未登记 Packagist 时，在项目 `composer.json` 中先添加 VCS 源：
+
+```json
+"repositories": [
+    {
+        "type": "vcs",
+        "url": "git@github.com:zzktz/laravel-kingbase.git"
+    }
+]
+```
+
+然后安装稳定标签：
+
+```bash
+composer require zzktz/laravel-kingbase:^1.0
 ```
 
 Laravel 会通过 Composer package discovery 自动加载 `KingbaseServiceProvider`。如果项目关闭了 package discovery，手动在 `config/app.php` 添加：
